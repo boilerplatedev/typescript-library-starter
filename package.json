@@ -1,0 +1,56 @@
+{
+  "name": "typescript-library-starter",
+  "version": "1.0.0",
+  "description": "Minimal starter repository for a publishable Typescript library",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:abhishekbhardwaj/typescript-library-starter.git"
+  },
+  "author": "Abhishek Bhardwaj <abhishek66ster@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test:coverage": "yarn-or-npm test --coverage",
+    "test:debug": "yarn-or-npm test --debug --detectOpenHandles",
+    "test:ci": "yarn-or-npm test --runInBand --no-cache --ci",
+    "test": "NODE_ENV=test jest",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit -p tsconfig.build.json",
+    "publish-lib": "yarn-or-npm run build && yarn-or-npm publish",
+    "publish-beta": "yarn-or-npm run build && yarn-or-npm publish --tag beta",
+    "publish-dryrun": "yarn-or-npm run build && yarn-or-npm publish --dry-run",
+    "clean": "rimraf dist",
+    "lint": "eslint './src/**/*' --ext .js,.ts",
+    "format": "eslint './src/**/*' --ext .js,.ts --fix",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "eslint-plugin-import": "^2.26.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.4",
+    "@types/node": "^18.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.2.1",
+    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-sonarjs": "^0.13.0",
+    "husky": "^8.0.1",
+    "jest": "^28.1.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.7.4",
+    "yarn-or-npm": "^3.0.1"
+  }
+}
