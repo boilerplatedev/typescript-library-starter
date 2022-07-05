@@ -1,0 +1,30 @@
+{
+    "plugins": [
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator",
+        [
+            "@semantic-release/changelog",
+            {
+                "changelogFile": "docs/changelog.md"
+            }
+        ],
+        [
+            "@semantic-release/npm",
+            {
+                "tarballDir": "pack"
+            }
+        ],
+        [
+            "@semantic-release/github",
+            {
+                "assets": "pack/*.tgz"
+            }
+        ],
+        [
+            "@semantic-release/git",
+            {
+                "assets": ["docs/changelog.md"]
+            }
+        ]
+    ]
+}
