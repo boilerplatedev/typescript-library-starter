@@ -1,4 +1,4 @@
 node_modules
 dist
-.lintstagedrc.js
-jest.config.js
+.*.js
+*.config.js
