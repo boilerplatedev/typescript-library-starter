@@ -42,8 +42,11 @@ jobs:
       - name: Lint
         run: yarn lint
 
-      - name: Build
+      - name: Run a type-check to make sure no build-time errors
         run: yarn typecheck
+
+      - name: Build
+        run: yarn build
 
       - name: Test
         run: yarn test
@@ -75,6 +78,9 @@ jobs:
         run: |
           yarn install --frozen-lockfile
           yarn clean
+
+      - name: Build
+        run: yarn build
 
       - name: Semantic Release
         run: npx semantic-release --branches main
