@@ -43,5 +43,5 @@ The focus is on making sure the developer experience is the best while building 
 
     - `NPM_TOKEN` - [Generate an access token](https://docs.npmjs.com/creating-and-viewing-access-tokens) on NPMJS.com to automatically publish the release.
 
-- To skip CI, add `skip-ci` to commit message.
-- To skip release, add `skip-release` to commit message.
+- To skip CI, add `skip ci` to commit message.
+- To skip release, add `skip release` to commit message.
