@@ -1,3 +1,18 @@
+# [2.0.0](https://github.com/abhishekbhardwaj/typescript-library-starter/compare/v1.0.0...v2.0.0) (2022-07-13)
+
+
+### Features
+
+* 💥 ✨ update `skip-ci` to `skip ci` and `skip-release` to `skip release` ([1bf2a1c](https://github.com/abhishekbhardwaj/typescript-library-starter/commit/1bf2a1c5e97b70192dac8042b72e54f9c1dd6629))
+
+
+### BREAKING CHANGES
+
+* Previously, the CI GitHub action looked for `skip-ci` and `skip-release` in commit
+messages to skip related CI stages. The dashes have been removed and swapped out with spaces. So if
+you include `skip ci` and `skip release` in your commit message, it'll skip the specific stage from
+running in CI
+
 # 1.0.0 (2022-07-13)
 
 
