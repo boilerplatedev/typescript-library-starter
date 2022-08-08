@@ -1,25 +1,26 @@
 name: Continuous Integration
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: [pull_request]
 
 jobs:
   test:
     if: "!contains(github.event.head_commit.message, 'skip ci')"
+    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: ['14.x', '16.x']
+        os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Use Node 16
+      - name: Use Node ${{ matrix.node }}
         uses: actions/setup-node@v2
         with:
-          node-version: 16.x
+          node-version: ${{ matrix.node }}
 
       - name: Use cached node_modules
         uses: actions/cache@v2
@@ -44,41 +45,4 @@ jobs:
         run: yarn build
 
       - name: Test
-        run: yarn test
-
-  release:
-    runs-on: ubuntu-latest
-    # Only run it after the test job is complete
-    needs: ['test']
-    if: "!contains(github.event.head_commit.message, 'skip ci') && !contains(github.event.head_commit.message, 'skip release') && github.event_name != 'pull_request'"
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Use Node 16
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
-
-      - name: Use cached node_modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: nodeModules-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            nodeModules-
-
-      - name: Install dependencies
-        run: |
-          yarn install --frozen-lockfile
-          yarn clean
-
-      - name: Build
-        run: yarn build
-
-      - name: Semantic Release
-        run: npx semantic-release --branches main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn test --ci

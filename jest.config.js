@@ -1,8 +1,5 @@
 module.exports = {
   preset: 'ts-jest/presets/js-with-ts',
-  moduleNameMapper: {
-    '^@src/(.*)$': '<rootDir>/src/$1',
-  },
   coveragePathIgnorePatterns: ['/node_modules/'],
   globals: {
     'ts-jest': {
@@ -10,6 +7,7 @@ module.exports = {
       diagnostics: false,
     },
   },
-  moduleFileExtensions: ['js', 'ts'],
-  testMatch: ['**/*.(test|spec).(js|ts)'],
-};
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  collectCoverageFrom: ['src/**/*.{ts,tsx,js,jsx}'],
+  testMatch: ['**/*.(test|spec).(js|ts|tsx|jsx)'],
+}
