@@ -1,3 +1,15 @@
+# [2.1.0](https://github.com/abhishekbhardwaj/typescript-library-starter/compare/v2.0.0...v2.1.0) (2022-08-08)
+
+
+### Bug Fixes
+
+* 🐛 make release github workflow work ([3065f15](https://github.com/abhishekbhardwaj/typescript-library-starter/commit/3065f158da6c915e86d87e7aa76ea7e6350bc5bb))
+
+
+### Features
+
+* ✨ allow for cjs and esm exports by using tsup instead of tsc ([40b6e16](https://github.com/abhishekbhardwaj/typescript-library-starter/commit/40b6e16c5220f646eed79633cd8823ed4146f19f))
+
 # [2.0.0](https://github.com/abhishekbhardwaj/typescript-library-starter/compare/v1.0.0...v2.0.0) (2022-07-13)
 
 
