@@ -1,3 +1,11 @@
+## [2.1.1](https://github.com/abhishekbhardwaj/typescript-library-starter/compare/v2.1.0...v2.1.1) (2022-08-08)
+
+
+### Bug Fixes
+
+* 🐛 make prettier work on windows ([58f5268](https://github.com/abhishekbhardwaj/typescript-library-starter/commit/58f5268cab1d8f6f326d2fe03f4d072eb9d660e1))
+* 🐛 oops - get github actions working ([648230a](https://github.com/abhishekbhardwaj/typescript-library-starter/commit/648230a7b0203175a3eeebee839c0f2c922efa71))
+
 # [2.1.0](https://github.com/abhishekbhardwaj/typescript-library-starter/compare/v2.0.0...v2.1.0) (2022-08-08)
 
 
