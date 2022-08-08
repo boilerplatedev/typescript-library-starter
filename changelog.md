@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/abhishekbhardwaj/typescript-library-starter/compare/v2.1.1...v2.1.2) (2022-08-08)
+
+
+### Bug Fixes
+
+* 🐛 only run CI on ubuntu and node 16+ - app developers can update things themselves ([6d8ecee](https://github.com/abhishekbhardwaj/typescript-library-starter/commit/6d8eceec5a6fbaa9d41d050fa5c61c3d5185e5b0))
+
 ## [2.1.1](https://github.com/abhishekbhardwaj/typescript-library-starter/compare/v2.1.0...v2.1.1) (2022-08-08)
 
 
