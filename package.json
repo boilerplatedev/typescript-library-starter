@@ -24,7 +24,7 @@
     "dev:commit": "cz",
     "test:coverage": "yarn-or-npm test --coverage",
     "test:debug": "yarn-or-npm test --debug --detectOpenHandles",
-    "test:ci": "yarn-or-npm test --runInBand --no-cache --ci --coverage",
+    "test:ci": "yarn-or-npm test --runInBand --no-cache --ci",
     "test": "NODE_ENV=test jest",
     "build": "rollup -c",
     "typecheck": "tsc --noEmit -p tsconfig.build.json",

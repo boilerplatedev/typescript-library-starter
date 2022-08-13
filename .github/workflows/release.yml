@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
 
-run: yarn test:ci
+jobs:
   release:
     name: Build, lint, test, release the library.
     runs-on: ubuntu-latest
