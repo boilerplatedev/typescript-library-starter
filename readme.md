@@ -2,6 +2,10 @@
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![CI Workflow](https://github.com/abhishekbhardwaj/typescript-library-starter/actions/workflows/ci.yml/badge.svg)](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge)
+[![Bundle Size (Minified)](https://badgen.net/bundlephobia/min/typescript-library-starter)](https://bundlephobia.com/package/typescript-library-starter)
+[![Bundle Size (Minified and Zipped)](https://badgen.net/bundlephobia/minzip/typescript-library-starter)](https://bundlephobia.com/package/typescript-library-starter)
+[![Dependency Count](https://badgen.net/bundlephobia/dependency-count/typescript-library-starter)](https://bundlephobia.com/package/typescript-library-starter)
+[![Tree Shaking](https://badgen.net/bundlephobia/tree-shaking/typescript-library-starter)](https://bundlephobia.com/package/typescript-library-starter)
 
 
 A minimal starter repository for a publishable Typescript library. Uses tools we use and love everyday.

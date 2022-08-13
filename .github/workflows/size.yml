@@ -1,0 +1,35 @@
+name: Performance budget tool for JavaScript to calculate the real cost of your JavaScript for end-users.
+
+on: [pull_request]
+
+jobs:
+  size:
+    runs-on: ubuntu-latest
+    env:
+      CI_JOB_NUMBER: 1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Use cached node_modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: nodeModules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            nodeModules-
+
+      - name: Install dependencies
+        run: |
+          yarn install --frozen-lockfile
+          yarn clean
+
+      - uses: andresz1/size-limit-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          skip_step: install

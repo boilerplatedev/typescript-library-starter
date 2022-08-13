@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
 
-jobs:
+run: yarn test:ci
   release:
     name: Build, lint, test, release the library.
     runs-on: ubuntu-latest
@@ -40,7 +40,7 @@ jobs:
         run: yarn build
 
       - name: Test
-        run: yarn test --ci
+        run: yarn test:ci
 
       - name: Semantic Release
         run: npx semantic-release --branches main

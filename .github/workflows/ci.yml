@@ -1,6 +1,9 @@
 name: Continuous Integration
 
-on: [push]
+on:
+  push:
+    branches: [main]
+  pull_request:
 
 jobs:
   test:
@@ -45,4 +48,7 @@ jobs:
         run: yarn build
 
       - name: Test
-        run: yarn test --ci
+        uses: ziishaned/jest-reporter-action@v0.0.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          test-command: "yarn test:ci"
