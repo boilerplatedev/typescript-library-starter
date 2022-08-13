@@ -21,6 +21,7 @@ The focus is on making sure the developer experience is the best while building 
   - Additionally, [devmoji](https://github.com/folke/devmoji) has been setup to emojify commit messages. These are also setup as a `prepare-commit-msg` git hook. If you wish to remove it, please update `.husky/prepare-commit-msg` and `package.json`.
 - Release with [semantic-release](https://www.npmjs.com/package/semantic-release). If you use a proper [Commit Message format](https://semantic-release.gitbook.io/semantic-release/#commit-message-format), you'll never have to manually version and publish NPM packages again.
 - Test with [Jest](https://jestjs.io/).
+- Builds using [Rollup](https://rollupjs.org/guide/en/).
 - GitHub Action to build and release to NPM automatically.
 
 ## How to Use?
@@ -49,3 +50,17 @@ The focus is on making sure the developer experience is the best while building 
 
 - To skip CI, add `skip ci` to commit message.
 - To skip release, add `skip release` to commit message.
+
+## Helpful Commands
+
+| Commands | Description |
+|---|---|
+| `build` | Uses Rollup to build the source directory and places the output in `dist/`. Builds both ESM and CJS. |
+| `dev:commit` | Launches an interactive terminal-based commit message writer. Uses [commitizen](https://commitizen-tools.github.io/commitizen/). |
+| `dev:open-bundle-visualizer` | Rollup is configured to generate an HTML file that lets you visualize and analyze your Rollup bundle to see which modules are taking up space in the final exported bundle. The file is `rollup-plugin-visualizer-stats.html` and this command will automatically open it up in your default browser. |
+| `test` | Runs the Jest based test-suite. |
+| `test:ci` | To run tests in CI environments. |
+| `lint` | Runs ESLint / Prettier to lint source code and display the issues. |
+| `format` | Runs ESLint / Prettier to lint source code and automatically format what can be fixed. |
+| `clean` | Deletes all auto-generated files and cleans up the folder. |
+| `typecheck` | Basically runs `tsc` with `noEmit` enabled to check if Typescript has any issues. If there are issues, they're printed on console for the developer to correct. |

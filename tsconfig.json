@@ -32,8 +32,7 @@
         // error out if import and file system have a casing mismatch. Recommended by TS
         "forceConsistentCasingInFileNames": true,
         // specify an output folder for all emitted files.
-        "outDir": "./dist",
-        "declarationDir": "./dist/types",
+        "outDir": "./dist"
     },
     "include": [
         "src/**/*",

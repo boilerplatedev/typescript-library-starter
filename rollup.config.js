@@ -6,6 +6,8 @@ import { terser } from 'rollup-plugin-terser'
 import json from '@rollup/plugin-json'
 import sourceMaps from 'rollup-plugin-sourcemaps'
 import replace from '@rollup/plugin-replace'
+import analyze from 'rollup-plugin-analyzer'
+import visualizer from 'rollup-plugin-visualizer'
 
 const pkg = require('./package.json')
 
@@ -37,8 +39,6 @@ export default {
     json(),
     typescript({
       tsconfig: './tsconfig.build.json',
-      // Typescript d.ts files will be generated in `/dist/types` folder. Specified via tsconfig.json.
-      useTsconfigDeclarationDir: true,
     }),
     // Rollup plugin which replaces targeted strings in files while bundling.
     replace({
@@ -53,6 +53,13 @@ export default {
         pure_getters: true,
         passes: 10,
       },
+    }),
+    analyze({
+      hideDeps: true,
+      summaryOnly: true,
+    }),
+    visualizer({
+      filename: 'rollup-plugin-visualizer-stats.html',
     }),
   ],
   preserveModules: true,
