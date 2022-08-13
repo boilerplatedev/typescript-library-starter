@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/abhishekbhardwaj/typescript-library-starter/compare/v2.2.0...v2.3.0) (2022-08-13)
+
+
+### Features
+
+* ✨ rollup analyze output + visualize bundle ([2f7bc4f](https://github.com/abhishekbhardwaj/typescript-library-starter/commit/2f7bc4f169aa6c9feb6a43632902fccd2065b796))
+
 # [2.2.0](https://github.com/abhishekbhardwaj/typescript-library-starter/compare/v2.1.2...v2.2.0) (2022-08-13)
 
 
