@@ -1,3 +1,16 @@
+# [2.2.0](https://github.com/abhishekbhardwaj/typescript-library-starter/compare/v2.1.2...v2.2.0) (2022-08-13)
+
+
+### Bug Fixes
+
+* 🐛 github action remove coverage reporter for now ([a48f29f](https://github.com/abhishekbhardwaj/typescript-library-starter/commit/a48f29f0053a7352bd2686bec0d204fe93db7cbc))
+* 🐛 oops .. fix invalid release GA ([ed83616](https://github.com/abhishekbhardwaj/typescript-library-starter/commit/ed8361623e8ec4f8a07ea958c5fb185de648ffb4))
+
+
+### Features
+
+* ✨ switch build process to rollup from tsup ([8314a85](https://github.com/abhishekbhardwaj/typescript-library-starter/commit/8314a857e014fed0e6be9761f418ec32521d427f))
+
 ## [2.1.2](https://github.com/abhishekbhardwaj/typescript-library-starter/compare/v2.1.1...v2.1.2) (2022-08-08)
 
 
