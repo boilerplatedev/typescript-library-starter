@@ -8,33 +8,34 @@ import sourceMaps from 'rollup-plugin-sourcemaps'
 import replace from '@rollup/plugin-replace'
 import analyze from 'rollup-plugin-analyzer'
 import visualizer from 'rollup-plugin-visualizer'
+import copy from 'rollup-plugin-copy'
 
-const pkg = require('./package.json')
+const outputs = [
+  {
+    dir: 'dist/esm',
+    format: 'esm',
+    freeze: false,
+    globals: {},
+    sourcemap: true,
+    exports: 'auto',
+  },
+  {
+    dir: 'dist/cjs',
+    format: 'cjs',
+    freeze: false,
+    globals: {},
+    sourcemap: true,
+    exports: 'auto',
+  },
+]
 
 export default {
-  input: 'src/index.ts',
-  output: [
-    {
-      // file: pkg.exports.import,
-      dir: 'dist/esm',
-      format: 'esm',
-      freeze: false,
-      globals: {},
-      sourcemap: true,
-    },
-    {
-      // file: pkg.exports.require,
-      dir: 'dist/cjs',
-      format: 'cjs',
-      freeze: false,
-      globals: {},
-      sourcemap: true,
-    },
-  ],
+  input: ['src/index.ts'],
+  output: outputs,
   treeshake: {},
   plugins: [
     peerDepsExternal(),
-    resolve({ extensions: [...RESOLVE_DEFAULTS.extensions, '.cjs', '.mjs', '.jsx'] }),
+    resolve({ extensions: [...RESOLVE_DEFAULTS.extensions, '.cjs', '.mjs', '.jsx', '.tsx'], browser: true }),
     commonjs(),
     json(),
     typescript({
@@ -54,6 +55,43 @@ export default {
         passes: 10,
       },
     }),
+    copy({
+      targets: [
+        { src: 'LICENSE', dest: 'dist' },
+        { src: 'readme.md', dest: 'dist' },
+        {
+          src: 'package.json',
+          dest: 'dist',
+          transform: (contents, filename) => {
+            const {
+              main,
+              module,
+              types,
+              exports,
+              files,
+              scripts,
+              dependencies,
+              devDependencies,
+              'size-limit': sizeLimit,
+              ...pkg
+            } = JSON.parse(contents.toString())
+
+            return JSON.stringify({
+              ...pkg,
+              main: main.replace('dist/', ''),
+              module: module.replace('dist/', ''),
+              types: types.replace('dist/', ''),
+              exports: {
+                types: exports.types.replace('dist/', ''),
+                require: exports.require.replace('dist/', ''),
+                import: exports.import.replace('dist/', ''),
+                default: exports.default.replace('dist/', ''),
+              },
+            })
+          },
+        },
+      ],
+    }),
     analyze({
       hideDeps: true,
       summaryOnly: true,
@@ -66,5 +104,7 @@ export default {
   external: [
     // https://github.com/HarveyD/react-component-library/issues/19#issuecomment-652323218
     'tslib',
+    'react',
+    'react-dom',
   ],
 }
