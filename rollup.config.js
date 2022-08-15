@@ -70,7 +70,6 @@ export default {
               exports,
               files,
               scripts,
-              dependencies,
               devDependencies,
               'size-limit': sizeLimit,
               ...pkg
