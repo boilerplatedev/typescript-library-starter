@@ -4,5 +4,10 @@
   "semi": false,
   "trailingComma": "all",
   "printWidth": 120,
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^[./]"
+  ]
 }
