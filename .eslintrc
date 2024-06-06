@@ -3,11 +3,12 @@
     "extends": [
         "airbnb-base",
         "airbnb-typescript/base",
-        "plugin:sonarjs/recommended",
+        "plugin:sonarjs/recommended-legacy",
         "plugin:prettier/recommended"
     ],
     "plugins": [
         "@typescript-eslint",
+        "sonarjs",
         "jest"
     ],
     "env": {
