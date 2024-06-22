@@ -9,6 +9,8 @@
     "plugins": [
         "@typescript-eslint",
         "sonarjs",
+        "import",
+        "unused-imports",
         "jest"
     ],
     "env": {
@@ -17,6 +19,7 @@
         "jest": true
     },
     "rules": {
+        "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
         "import/prefer-default-export": "off",
         "import/no-cycle": "off",
         "no-multi-assign": "off",
@@ -51,6 +54,16 @@
             "ForInStatement"
         ],
         "use-isnan": "error",
+        "unused-imports/no-unused-imports": "warn",
+        "unused-imports/no-unused-vars": [
+            "warn",
+            {
+                "vars": "all",
+                "varsIgnorePattern": "^_",
+                "args": "after-used",
+                "argsIgnorePattern": "^_"
+            }
+        ],
         "@typescript-eslint/no-unused-vars": [
             "error",
             {
@@ -86,7 +99,7 @@
     },
     "parserOptions": {
         // Allows for the parsing of modern ECMAScript features
-        "ecmaVersion": 2020,
+        "ecmaVersion": "latest",
         // Allows for the use of imports
         "sourceType": "module",
         // https://blog.geographer.fr/eslint-parser-services, https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project
