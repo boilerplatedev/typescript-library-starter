@@ -37,7 +37,7 @@ The focus is on making sure the developer experience is the best while building 
     - [@semantic-release/github](https://github.com/semantic-release/github)
     - [@semantic-release/git](https://github.com/semantic-release/git)
 
-- The GitHub action will automatically generate release notes and a changelog. It will also automatically publish to NPM and also make a TAR ball and add it to `GitHub Releases`. To use it properly, please generate the following tokens:
+- The `Release` GitHub Action will automatically generate release notes and a changelog. It will also automatically publish to NPM and also make a TAR ball and add it to `GitHub Releases`. To use it properly, please generate the following tokens:
 
     - `GITHUB_TOKEN` - Generate a Personal Access Token that you can use to authenticate your own user.
       - When using the GITHUB_TOKEN, the [minimum required permissions](https://github.com/semantic-release/github#github-authentication) are:
@@ -48,8 +48,9 @@ The focus is on making sure the developer experience is the best while building 
 
     - `NPM_TOKEN` - [Generate an access token](https://docs.npmjs.com/creating-and-viewing-access-tokens) on NPMJS.com to automatically publish the release.
 
+    - This Action is currently setup to run using GitHub Workflows. To learn how to manually run a workflow, [checkout this link](https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow).
+
 - To skip CI, add `skip ci` to commit message.
-- To skip release, add `skip release` to commit message.
 
 ## Helpful Commands
 
