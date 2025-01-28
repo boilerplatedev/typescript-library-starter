@@ -1,3 +1,5 @@
+import { describe, expect, test } from 'vitest'
+
 import { one, two } from '../src'
 
 describe('Sample Test', () => {

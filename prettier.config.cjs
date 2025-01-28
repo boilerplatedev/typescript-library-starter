@@ -4,7 +4,6 @@
 /** @type { PrettierConfig | SortImportsConfig } */
 const config = {
   singleQuote: true,
-  noSemi: true,
   semi: false,
   trailingComma: "all",
   printWidth: 120,
