@@ -40,11 +40,11 @@
     "prepare": "is-ci || husky"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.6.1",
-    "@commitlint/config-conventional": "^19.6.0",
-    "@eslint/compat": "^1.2.5",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "@eslint/compat": "^1.2.6",
     "@eslint/eslintrc": "^3.2.0",
-    "@eslint/js": "^9.19.0",
+    "@eslint/js": "^9.20.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-json": "^6.1.0",
@@ -54,7 +54,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@size-limit/preset-big-lib": "^11.1.6",
-    "@types/node": "^22.12.0",
+    "@types/node": "^22.13.1",
     "commander": "^13.1.0",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "3.3.0",
@@ -69,21 +69,21 @@
     "is-ci": "^4.1.0",
     "lint-staged": "^15.4.3",
     "open": "^10.1.0",
-    "prettier": "^3.4.2",
+    "prettier": "^3.5.0",
     "rimraf": "^6.0.1",
-    "rollup": "^4.32.0",
+    "rollup": "^4.34.6",
     "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.36.0",
     "rollup-plugin-visualizer": "^5.14.0",
-    "semantic-release": "^24.2.1",
+    "semantic-release": "^24.2.2",
     "size-limit": "^11.1.6",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.22.0",
+    "typescript-eslint": "^8.24.0",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.0.4",
+    "vitest": "^3.0.5",
     "yarpm": "^1.2.0"
   },
   "size-limit": [
@@ -91,5 +91,5 @@
       "path": "dist/*.js"
     }
   ],
-  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+  "packageManager": "pnpm@10.3.0"
 }
